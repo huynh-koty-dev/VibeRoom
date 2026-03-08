@@ -1,0 +1,23 @@
+{
+  "name": "spatial-ai-platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.14"
+  },
+  "packageManager": "npm@10.9.3",
+  "engines": {
+    "node": ">=20"
+  }
+}
