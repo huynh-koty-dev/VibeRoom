@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
-import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3'
+import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 
 @Injectable()
@@ -35,6 +35,17 @@ export class StorageService {
       Key: key,
     })
     return getSignedUrl(this.client, command, { expiresIn })
+  }
+
+  async uploadBuffer(key: string, buffer: Buffer, contentType: string): Promise<string> {
+    const command = new PutObjectCommand({
+      Bucket: this.bucket,
+      Key: key,
+      Body: buffer,
+      ContentType: contentType,
+    })
+    await this.client.send(command)
+    return key
   }
 
   generateKey(folder: string, userId: string, filename: string): string {

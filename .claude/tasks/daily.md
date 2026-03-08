@@ -21,23 +21,30 @@
 - [x] GitHub Actions CI
 - [x] Build thành công cả 2 apps
 
-### Còn lại của M1
-- [ ] Tạo GitHub repository và push code
-- [ ] Setup MongoDB Atlas M0 (lấy URI)
-- [ ] Setup Cloudflare R2 bucket (lấy credentials)
-- [ ] Next.js: NextAuth v5 Credentials provider
-- [ ] Next.js: Base layout + route groups (auth), (dashboard), (company)
-- [ ] Next.js: Login + Register pages
-- [ ] Next.js: Axios instance với JWT interceptor
-- [ ] Deploy: Vercel + Railway
+### M1 — Hoàn thành
+- [x] Turborepo, NestJS, Next.js, shared-types
+- [x] Auth (register, login, refresh, logout)
+- [x] Storage module (R2 presigned URLs)
+- [x] NextAuth v5 + Login/Register pages
+- [x] Base layout, route groups, middleware/proxy
+- [x] MongoDB Atlas kết nối thành công
+
+### M2 — Hoàn thành
+- [x] NestJS: SpacesModule (CRUD, photo upload trigger)
+- [x] NestJS: AiModule (Claude Vision room analysis)
+- [x] Next.js: SpaceCreateModal (upload 1–4 ảnh → R2 → trigger analysis)
+- [x] Next.js: SpaceCard + Spaces list page
+- [x] Next.js: Space detail page (phân tích + confirm dimensions)
+- [x] Polling auto-refresh khi status = analyzing
 
 ---
 
-## Backlog — M2 (sau khi M1 xong)
-- [ ] Space upload UI (1–4 ảnh)
-- [ ] NestJS: Spaces module + schema
-- [ ] NestJS: AI module (Claude Vision room analysis)
-- [ ] UI: hiển thị kết quả phân tích, chỉnh dimensions
+## Tiếp theo — M3: Concept Selection
+- [ ] NestJS: ConceptsModule + seed 7 concepts
+- [ ] NestJS: AI suggest concept
+- [ ] Next.js: /spaces/[id]/concept page
+- [ ] Next.js: ConceptGallery + mood board UI
+- [ ] Three.js: ConceptEnvironment config
 
 ---
 

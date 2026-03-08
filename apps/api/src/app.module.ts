@@ -8,6 +8,8 @@ import { HealthController } from './health/health.controller'
 import { UsersModule } from './users/users.module'
 import { AuthModule } from './auth/auth.module'
 import { StorageModule } from './storage/storage.module'
+import { SpacesModule } from './spaces/spaces.module'
+import { AiModule } from './ai/ai.module'
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { StorageModule } from './storage/storage.module'
     UsersModule,
     AuthModule,
     StorageModule,
+    SpacesModule,
+    AiModule,
   ],
   controllers: [HealthController],
   providers: [
